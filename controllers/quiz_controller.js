@@ -18,18 +18,6 @@ exports.answer = function(req, res) {
   res.render('quizes/answer', {respuesta: c});
 };
 
-exports.listadopreguntas = function(req,res) {
-  var n = quiz.numQ();
-  var array = new Array(n);
-
-  for(var i=0; i<n; i++) {
-    array[i] = ("Pregunta " + (i+1) + ": " + quiz.getQ(i));
-  }
-
-  res.render('quizes/listadopreguntas', {lista: array});
-};
-
-
 exports.pregunta = function(req, res) {
   var id = req.params.id;
   var n = quiz.numQ();
